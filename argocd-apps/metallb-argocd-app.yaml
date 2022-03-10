@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: traefik
+  name: metallb
   namespace: argocd
 spec:
   source:
-    repoURL: git@github.schneider-electric.com:chimera/cluster-config.git
-    path: traefik/
+    repoURL: git@github.com:miphip/mip-cluster-config.git
+    path: metallb/
     targetRevision: HEAD
     helm:
       valueFiles:
-        - traefik-values.yaml
+        - metallb-values.yaml
   destination:
-    namespace: traefik
+    namespace: metallb
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:

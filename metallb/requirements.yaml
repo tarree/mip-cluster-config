@@ -1,0 +1,5 @@
+# This is a helm dependencies file that pulls in the metallb helm chart
+dependencies:
+  - name: metallb
+    version: "0.12.1"
+    repository: https://helm.metallb.io/metallb
