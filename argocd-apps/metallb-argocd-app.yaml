@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   source:
-    repoURL: git@github.com:miphip/mip-cluster-config.git
+    repoURL: https://github.com/miphip/mip-cluster-config.git
     path: metallb/
     targetRevision: HEAD
     helm:
