@@ -5,4 +5,4 @@ version: 0.1.0
 dependencies:
   - name: metallb
     version: "0.12.1"
-    repository: https://helm.metallb.io/metallb
+    repository: https://metallb.github.io/metallb
