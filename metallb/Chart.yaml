@@ -1,4 +1,7 @@
-# This is a helm dependencies file that pulls in the metallb helm chart
+# This helm chart simply pulls in the metallb helm chart
+apiVersion: v2
+name: metallb
+version: 0.1.0
 dependencies:
   - name: metallb
     version: "0.12.1"
