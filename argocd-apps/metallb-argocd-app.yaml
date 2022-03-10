@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/miphip/mip-cluster-config.git
-    path: metallb/
+    path: metallb
     targetRevision: HEAD
     helm:
       valueFiles:
