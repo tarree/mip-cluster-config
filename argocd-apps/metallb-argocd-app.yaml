@@ -4,6 +4,7 @@ metadata:
   name: metallb
   namespace: argocd
 spec:
+  project: default
   source:
     repoURL: https://github.com/miphip/mip-cluster-config.git
     path: metallb/
