@@ -1,0 +1,6 @@
+traefik:
+  deployment:
+    kind: Deployment
+  service:
+    enabled: true
+    type: LoadBalancer
