@@ -4,3 +4,6 @@ traefik:
   service:
     enabled: true
     type: LoadBalancer
+  ingressRoute:
+    dashboard:
+      enabled: true
