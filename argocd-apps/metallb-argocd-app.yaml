@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/miphip/mip-cluster-config.git
+    repoURL: https://github.com/tarree/mip-cluster-config.git
     path: metallb
     targetRevision: HEAD
     helm:
