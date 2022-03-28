@@ -1,0 +1,45 @@
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: rabbitmq
+---
+apiVersion: rabbitmq.com/v1beta1
+kind: RabbitmqCluster
+metadata:
+  name: rabbitmq
+  namespace: rabbitmq
+spec:
+  replicas: 3
+  resources:
+    requests:
+      cpu: 2
+      memory: 5Gi
+    limits:
+      cpu: 2
+      memory: 5Gi
+  persistence:
+    storageClassName: fast-local
+    storage: "100Gi"
+  affinity:
+    # ensure pods are deployed on different nodes
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+            - key: app.kubernetes.io/name
+              operator: In
+              values:
+              - rabbitmq
+        topologyKey: "kubernetes.io/hostname"
+---
+apiVersion: rabbitmq.com/v1beta1
+kind: User
+metadata:
+  name: admin
+  namespace: rabbitmq
+spec:
+  tags:
+  - administrator
+  rabbitmqClusterReference:
+    name: rabbitmq

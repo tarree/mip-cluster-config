@@ -1,0 +1,29 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: rabbitmq-stripprefix
+  namespace: rabbitmq
+spec:
+  stripPrefix:
+    prefixes:
+      - /rabbitmq
+    forceSlash: false
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: rabbitmq-management
+  namespace: rabbitmq
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: PathPrefix(`/rabbitmq`)
+    kind: Rule
+    services:
+    - name: rabbitmq
+      namespace: rabbitmq
+      port: management
+    middlewares:
+      - name: rabbitmq-stripprefix
