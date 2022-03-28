@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Namespace
 metadata:
   annotations:
-    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/sync-wave: "-1"
   labels:
     app.kubernetes.io/component: rabbitmq-operator
     app.kubernetes.io/name: rabbitmq-system
@@ -14,7 +14,7 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.7.0
-    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/sync-wave: "-1"
   labels:
     app.kubernetes.io/component: rabbitmq-operator
     app.kubernetes.io/name: rabbitmq-cluster-operator
