@@ -8,10 +8,10 @@ spec:
   replicas: 1
   resources:
     requests:
-      cpu: 2
+      cpu: '2'
       memory: 5Gi
     limits:
-      cpu: 2
+      cpu: '2'
       memory: 5Gi
   persistence:
     storageClassName: fast-local
