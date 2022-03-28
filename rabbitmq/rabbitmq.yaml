@@ -10,7 +10,7 @@ metadata:
   name: rabbitmq
   namespace: rabbitmq
 spec:
-  replicas: 3
+  replicas: 1
   resources:
     requests:
       cpu: 2
