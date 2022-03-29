@@ -1,0 +1,8 @@
+# This helm chart simply pulls in the metallb helm chart
+apiVersion: v2
+name: authelia
+version: 0.1.0
+dependencies:
+  - name: authelia
+    version: "0.8.20"
+    repository: https://charts.authelia.com

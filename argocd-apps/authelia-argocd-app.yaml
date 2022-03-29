@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: authelia
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/tarree/mip-cluster-config.git
+    path: authelia
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - authelia-values.yaml
+  destination:
+    namespace: authelia
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
