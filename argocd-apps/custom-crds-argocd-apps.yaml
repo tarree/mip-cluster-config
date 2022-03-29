@@ -10,7 +10,7 @@ spec:
     path: crd
     targetRevision: HEAD
   destination:
-    namespace: custom-crds
+    namespace: cert-manager
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
