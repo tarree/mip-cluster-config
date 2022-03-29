@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: certmanager
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/tarree/mip-cluster-config.git
+    path: cert-manager
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - cert-manager-values.yaml
+  destination:
+    namespace: certmanager
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true

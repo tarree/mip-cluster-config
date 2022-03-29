@@ -1,0 +1,3 @@
+jetstack:
+  global:
+    installCRDs: true

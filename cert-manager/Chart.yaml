@@ -1,0 +1,8 @@
+# This helm chart simply pulls in the metallb helm chart
+apiVersion: v2
+name: certmanager
+version: 0.1.0
+dependencies:
+  - name: jetstack
+    version: "0.12.1"
+    repository: https://charts.jetstack.io
