@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: custom-crds
+  name: cert-manager
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/tarree/mip-cluster-config.git
-    path: crd
+    path: cert-manager-crd
     targetRevision: HEAD
   destination:
     namespace: cert-manager
