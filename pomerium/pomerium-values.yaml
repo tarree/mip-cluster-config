@@ -32,9 +32,6 @@ pomerium:
     tls:
       certificateSecret: pomerium-redis-tls
 
-  ingressController:
-    enabled: true
-
   config:
     rootDomain: chimera.local
     sharedSecret: R0+XRoGVpcoi4PfB8tMlvnrS5XUasO+D1frAEdYcYjs=
