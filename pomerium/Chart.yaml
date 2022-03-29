@@ -1,0 +1,8 @@
+# This helm chart simply pulls in the pomerium helm chart
+apiVersion: v2
+name: pomerium
+version: 0.1.0
+dependencies:
+  - name: pomerium
+    version: "31.0.1"
+    repository: https://helm.pomerium.io

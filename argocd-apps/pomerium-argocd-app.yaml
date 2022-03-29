@@ -1,16 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager-crd
+  name: pomerium
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/tarree/mip-cluster-config.git
-    path: cert-manager-crd
+    path: pomerium
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - pomerium-values.yaml
   destination:
-    namespace: cert-manager
+    namespace: pomerium
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:

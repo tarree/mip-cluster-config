@@ -1,0 +1,38 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: auth
+spec:
+  forwardAuth:
+    address: https://chimera.local/auth
+    tls:
+      insecureSkipVerify: true
+    trustForwardHeader: true
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: pomerium-stripprefix
+  namespace: pomerium
+spec:
+  stripPrefix:
+    prefixes:
+      - /pomerium
+    forceSlash: false
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: pomerium-route
+  namespace: pomerium
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: PathPrefix(`/auth`)
+    kind: Rule
+    services:
+    - name: pomerium
+      namespace: pomerium
+    middlewares:
+      - name: pomerium-stripprefix
