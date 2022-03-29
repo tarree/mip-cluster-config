@@ -36,11 +36,10 @@ pomerium:
     rootDomain: chimera.local
     sharedSecret: R0+XRoGVpcoi4PfB8tMlvnrS5XUasO+D1frAEdYcYjs=
     cookieSecret: FLPCOQKigK5EQnyXlBhchl5fgzNKqi3ubtvOGt477Dg=
-    generateTLS: true
   ingress:
     annotations:
       traefik.ingress.kubernetes.io/router.tls: "true"
-    secretName: wildcard-tls
+    secretName: pomerium-tls
   forwardAuth:
     enabled: true
     internal: true
