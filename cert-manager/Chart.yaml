@@ -1,6 +1,6 @@
 # This helm chart simply pulls in the metallb helm chart
 apiVersion: v2
-name: certmanager
+name: cert-manager
 version: 0.1.0
 dependencies:
   - name: cert-manager
