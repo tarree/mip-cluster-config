@@ -32,7 +32,7 @@ spec:
   - match: PathPrefix(`/auth`)
     kind: Rule
     services:
-    - name: pomerium
+    - name: pomerium-proxy
       namespace: pomerium
     middlewares:
       - name: pomerium-stripprefix
