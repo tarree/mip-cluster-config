@@ -37,11 +37,6 @@ pomerium:
     sharedSecret: R0+XRoGVpcoi4PfB8tMlvnrS5XUasO+D1frAEdYcYjs=
     cookieSecret: FLPCOQKigK5EQnyXlBhchl5fgzNKqi3ubtvOGt477Dg=
     generateTLS: true
-    policy:
-      - from: https://chimera.local
-        to: http://hello-nginx
-        allowed_domains:
-          - gmail.com
   ingress:
     annotations:
       traefik.ingress.kubernetes.io/router.tls: "true"
