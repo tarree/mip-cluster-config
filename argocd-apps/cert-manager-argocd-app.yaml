@@ -11,7 +11,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - cert-manager-values.yaml
+        - certmanager-values.yaml
   destination:
     namespace: certmanager
     server: https://kubernetes.default.svc
