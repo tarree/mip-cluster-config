@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/tarree/mip-cluster-config.git
-    path: crds
+    path: crd
     targetRevision: HEAD
   destination:
     namespace: custom-crds
