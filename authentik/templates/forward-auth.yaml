@@ -32,7 +32,7 @@ spec:
     - name: authentik
       namespace: authentik
       port: 80
-  - match: ""
+  - match: "Host(`chimera.local`)"
     kind: Rule
     middlewares:
       - name: authentik
