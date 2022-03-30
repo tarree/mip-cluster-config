@@ -38,7 +38,3 @@ spec:
     - name: authentik
       namespace: authentik
     priority: 10
-    services:
-      - name: ak-outpost-authentik-embedded-outpost
-        namespace: authentik
-        port: 9000
