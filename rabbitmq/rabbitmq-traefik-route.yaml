@@ -19,7 +19,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: PathPrefix(`/rabbitmq`)
+  - match: "Host(`chimera.local`)" && PathPrefix(`/rabbitmq`)
     kind: Rule
     priority: 5
     services:
@@ -28,3 +28,5 @@ spec:
       port: management
     middlewares:
       - name: rabbitmq-stripprefix
+      - name: authentik
+        namespace: authentik
