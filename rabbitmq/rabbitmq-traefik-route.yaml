@@ -21,6 +21,7 @@ spec:
   routes:
   - match: PathPrefix(`/rabbitmq`)
     kind: Rule
+    priority: 5
     services:
     - name: rabbitmq
       namespace: rabbitmq
