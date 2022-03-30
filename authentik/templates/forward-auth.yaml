@@ -36,8 +36,6 @@ metadata:
   name: authentik-route
   namespace: authentik
 spec:
-  entryPoints:
-    - web
   routes:
   - kind: Rule
     match: "Host(`chimera.local`)"
@@ -45,7 +43,6 @@ spec:
       - name: authentik
         namespace: authentik
     priority: 10
-    services: # Unchanged
   - match: PathPrefix(`/authentik`)
     kind: Rule
     services:
