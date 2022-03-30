@@ -27,6 +27,7 @@ spec:
       namespace: rabbitmq
       port: management
     - name: ak-outpost-authentik-embedded-outpost
+      namespace: authentik
       port: 9000
     middlewares:
       - name: rabbitmq-stripprefix
