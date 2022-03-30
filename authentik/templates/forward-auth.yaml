@@ -48,5 +48,6 @@ spec:
     services:
     - name: authentik
       namespace: authentik
+      port: 80
     middlewares:
       - name: authentik-stripprefix
