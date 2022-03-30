@@ -34,7 +34,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: authentik-route
-  namespace: rabbitmq
+  namespace: authentik
 spec:
   entryPoints:
     - web
@@ -46,5 +46,11 @@ spec:
         namespace: authentik
     priority: 10
     services: # Unchanged
+  - match: PathPrefix(`/authentik`)
+    kind: Rule
+    services:
+    - name: authentik
+      namespace: authentik
+      port: 9000
     middlewares:
       - name: authentik-stripprefix

@@ -8,14 +8,6 @@ authentik:
     postgresql:
       password: "ThisIsNotASecurePassword"
 
-  ingress:
-    enabled: true
-    hosts:
-    - host: authentik.domain.tld
-      paths:
-      - path: "/"
-        pathType: Prefix
-
   postgresql:
     enabled: true
     postgresqlPassword: "ThisIsNotASecurePassword"
