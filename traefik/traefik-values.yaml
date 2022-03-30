@@ -10,3 +10,6 @@ traefik:
   ports:
     traefik:
       expose: true
+  providers:
+    kubernetesCRD:
+      allowCrossNamespace: true
