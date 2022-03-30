@@ -32,12 +32,3 @@ spec:
     - name: authentik
       namespace: authentik
       port: 80
-  - kind: Rule
-    match: "Host(`chimera.local`)"
-    middlewares:
-      - name: authentik
-        namespace: authentik
-    priority: 10
-    services:
-      - name: ak-outpost-authentik-embedded-outpost
-        port: 9000

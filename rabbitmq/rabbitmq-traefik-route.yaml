@@ -28,3 +28,8 @@ spec:
       port: management
     middlewares:
       - name: rabbitmq-stripprefix
+      - name: authentik
+        namespace: authentik
+    services:
+      - name: ak-outpost-authentik-embedded-outpost
+        port: 9000
