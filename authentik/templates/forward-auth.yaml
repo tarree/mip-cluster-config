@@ -4,7 +4,7 @@ metadata:
   name: authentik
 spec:
   forwardAuth:
-    address: https://ak-outpost-authentik-embedded-outpost:9000/outpost.goauthentik.io/auth/traefik
+    address: https://auth.chimera.local/outpost.goauthentik.io/auth/traefik
     trustForwardHeader: true
     authResponseHeaders:
       - X-authentik-username
@@ -20,28 +20,20 @@ spec:
       - X-authentik-meta-version
 ---
 apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: authentik-stripprefix
-  namespace: authentik
-spec:
-  stripPrefix:
-    prefixes:
-      - /authentik
-    forceSlash: false
----
-apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: authentik
   namespace: authentik
 spec:
   routes:
-  - match: "Host(`chimera.local`) && PathPrefix(`/authentik`)"
+  - match: "Host(`auth.chimera.local`)"
     kind: Rule
     services:
     - name: authentik
       namespace: authentik
       port: 80
+  - match: ""
+    kind: Rule
     middlewares:
-      - name: authentik-stripprefix
+      - name: authentik
+        namespace: authentik
