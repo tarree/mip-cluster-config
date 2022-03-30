@@ -27,3 +27,5 @@ spec:
       port: management
     middlewares:
       - name: rabbitmq-stripprefix
+      - name: authentik
+        namespace: authentik
