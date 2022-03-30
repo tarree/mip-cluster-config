@@ -51,6 +51,6 @@ spec:
     services:
     - name: authentik
       namespace: authentik
-      port: 9000
+      port: 9100
     middlewares:
       - name: authentik-stripprefix
