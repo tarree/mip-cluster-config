@@ -19,7 +19,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: "Host(`chimera.local`)" && PathPrefix(`/rabbitmq`)
+  - match: "Host(`chimera.local`) && PathPrefix(`/rabbitmq`)"
     kind: Rule
     priority: 5
     services:
