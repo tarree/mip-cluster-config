@@ -26,14 +26,9 @@ metadata:
   namespace: authentik
 spec:
   routes:
-  - match: "Host(`auth.chimera.local`)"
+  - match: "Host(`chimera.local`)"
     kind: Rule
     services:
     - name: authentik
       namespace: authentik
       port: 80
-  - match: "Host(`chimera.local`)"
-    kind: Rule
-    middlewares:
-      - name: authentik
-        namespace: authentik
