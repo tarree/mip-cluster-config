@@ -26,9 +26,8 @@ metadata:
   namespace: authentik
 spec:
   routes:
-  - match: "Host(`chimera.local`)"
+  - match: "Host(`auth.chimera.local`)"
     kind: Rule
-    priority: 1
     services:
     - name: authentik
       namespace: authentik
