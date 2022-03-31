@@ -4,7 +4,7 @@ metadata:
   name: authentik
 spec:
   forwardAuth:
-    address: https://auth.chimera.local/outpost.goauthentik.io/auth/traefik
+    address: https://chimera.local/outpost.goauthentik.io/auth/traefik
     trustForwardHeader: true
     authResponseHeaders:
       - X-authentik-username
