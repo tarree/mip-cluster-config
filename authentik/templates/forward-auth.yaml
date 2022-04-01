@@ -33,10 +33,3 @@ spec:
     - name: authentik
       namespace: authentik
       port: 80
-  - kind: Rule
-    match: "Host(`chimera.local`) && PathPrefix(`/outpost.goauthentik.io/`)"
-    priority: 15
-    services:
-      - kind: Service
-        name: ak-outpost-authentik-embedded-outpost
-        port: 9000
