@@ -26,7 +26,7 @@ metadata:
   namespace: authentik
 spec:
   routes:
-  - match: "Host(`chimera.local`)"
+  - match: "Host(`chimera.samswork.co.uk`)"
     kind: Rule
     priority: 1
     services:
@@ -34,7 +34,7 @@ spec:
       namespace: authentik
       port: 80
   - kind: Rule
-    match: "Host(`chimera.local`) && PathPrefix(`/outpost.goauthentik.io/`)"
+    match: "Host(`chimera.samswork.co.uk`) && PathPrefix(`/outpost.goauthentik.io/`)"
     priority: 15
     services:
       - kind: Service
