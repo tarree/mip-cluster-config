@@ -4,7 +4,7 @@ metadata:
   name: authentik
 spec:
   forwardAuth:
-    address: https://ak-outpost-authentik-embedded-outpost/outpost.goauthentik.io/auth/traefik
+    address: https://10.5.0.201/outpost.goauthentik.io/auth/traefik
     trustForwardHeader: true
     authResponseHeaders:
       - X-authentik-username
