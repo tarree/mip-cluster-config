@@ -28,6 +28,7 @@ spec:
   routes:
   - match: "Host(`chimera.local`)"
     kind: Rule
+    priority: 1
     services:
     - name: authentik
       namespace: authentik
