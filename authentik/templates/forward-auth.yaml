@@ -4,7 +4,7 @@ metadata:
   name: authentik
 spec:
   forwardAuth:
-    address: http://ak-outpost-authentik-embedded-outpost.authentik.svc.cluster.local/outpost.goauthentik.io/auth/traefik
+    address: http://chimera.local/outpost.goauthentik.io/auth/traefik
     trustForwardHeader: true
     authResponseHeaders:
       - X-authentik-username
@@ -33,3 +33,12 @@ spec:
     - name: authentik
       namespace: authentik
       port: 80
+  - kind: Rule
+    match: "Host(`chimera.local`) && PathPrefix(`/outpost.goauthentik.io/`)"
+    priority: 15
+    services:
+      - kind: Service
+        # Or, to use an external Outpost, create an ExternalName service and reference that here.
+        # See https://kubernetes.io/docs/concepts/services-networking/service/#externalname
+        name: ak-outpost-example-outpost
+        port: 9000
