@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: authentik
+  name: traefik-forward-auth
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/tarree/mip-cluster-config.git
-    path: authentik
+    path: traefik-forward-auth
     targetRevision: HEAD
     helm:
       valueFiles:
-        - authentik-values.yaml
+        - traefik-forward-auth-values.yaml
   destination:
-    namespace: authentik
+    namespace: traefik-forward-auth
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:

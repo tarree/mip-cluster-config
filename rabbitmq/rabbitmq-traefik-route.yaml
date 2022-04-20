@@ -27,6 +27,5 @@ spec:
       namespace: rabbitmq
       port: management
     middlewares:
-      - name: authentik
-        namespace: authentik
+      - name: traefik-forward-auth
       - name: rabbitmq-stripprefix
