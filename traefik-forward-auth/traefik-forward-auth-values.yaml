@@ -4,6 +4,8 @@ traefik-forward-auth:
     tag: "latest"
     pullPolicy: IfNotPresent
   env:
+    LOG_LEVEL: trace # [trace|debug|info|warn|error|fatal|panic]
+    LOG_FORMAT: pretty # [text|json|pretty]
     AUTH_HOST: auth.chimera.samswork.co.uk
     COOKIE_DOMAIN: chimera.samswork.co.uk # Domain(s) to set auth cookie on. (Comma delimited)
     INSECURE_COOKIE: 'true' # Use insecure cookies
