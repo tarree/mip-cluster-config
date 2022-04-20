@@ -1,0 +1,18 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-forward-auth
+  namespace: traefik-forward-auth
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: "Host(`auth.chimera.samswork.co.uk`)"
+    kind: Rule
+    priority: 20
+    services:
+    - name: traefik-forward-auth
+      namespace: traefik-forward-auth
+    middlewares:
+      - name: rabbitmq-stripprefix
