@@ -1,26 +1,11 @@
-#
-# IMPORTANT NOTE
-#
-# This chart inherits from our common library chart. You can check the default values/options here:
-# https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
-#
-
-image:
-  # -- image repository
-  repository: thomseddon/traefik-forward-auth
-  # -- image tag
-  # @default -- chart.appVersion
-  tag: ""
-  # -- image pull policy
-  pullPolicy: IfNotPresent
-
-env:
-  AUTH_HOST: auth.chimera.samswork.co.uk
-  DOMAIN: chimera.samswork.co.uk # Only allow given email domains. (Comma delimited)
-  WHITELIST: zorn.des.lammes@gmail.com # Only allow given email addresses. (Comma delimited)
-  COOKIE_DOMAIN: chimera.samswork.co.uk # Domain(s) to set auth cookie on. (Comma delimited)
-  INSECURE_COOKIE: 'true' # Use insecure cookies
-  COOKIE_NAME: _chimera_forward_auth # Cookie name
-  CSRF_COOKIE_NAME: _chimera_forward_auth_csrf # CSRF cookie name
-  PROVIDERS_GOOGLE_CLIENT_ID: '531716066158-s5kjgu7u9hpfl0ags2r077has4vbusi1.apps.googleusercontent.com' # Client ID
-  PROVIDERS_GOOGLE_CLIENT_SECRET: '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' # Client Secret
+traefik-forward-auth:
+  env:
+    AUTH_HOST: auth.chimera.samswork.co.uk
+    DOMAIN: chimera.samswork.co.uk # Only allow given email domains. (Comma delimited)
+    WHITELIST: zorn.des.lammes@gmail.com # Only allow given email addresses. (Comma delimited)
+    COOKIE_DOMAIN: chimera.samswork.co.uk # Domain(s) to set auth cookie on. (Comma delimited)
+    INSECURE_COOKIE: 'true' # Use insecure cookies
+    COOKIE_NAME: _chimera_forward_auth # Cookie name
+    CSRF_COOKIE_NAME: _chimera_forward_auth_csrf # CSRF cookie name
+    PROVIDERS_GOOGLE_CLIENT_ID: '531716066158-s5kjgu7u9hpfl0ags2r077has4vbusi1.apps.googleusercontent.com' # Client ID
+    PROVIDERS_GOOGLE_CLIENT_SECRET: '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' # Client Secret
