@@ -14,5 +14,6 @@ spec:
     services:
     - name: traefik-forward-auth
       namespace: traefik-forward-auth
+      port: 4181
     middlewares:
       - name: rabbitmq-stripprefix
