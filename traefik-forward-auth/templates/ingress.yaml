@@ -10,10 +10,7 @@ spec:
   routes:
   - match: "Host(`auth.chimera.samswork.co.uk`)"
     kind: Rule
-    priority: 20
     services:
     - name: traefik-forward-auth
       namespace: traefik-forward-auth
       port: 4181
-    middlewares:
-      - name: rabbitmq-stripprefix
