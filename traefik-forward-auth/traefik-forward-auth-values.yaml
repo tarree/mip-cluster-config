@@ -1,7 +1,6 @@
 traefik-forward-auth:
   env:
     AUTH_HOST: auth.chimera.samswork.co.uk
-    WHITELIST: zorn.des.lammes@gmail.com # Only allow given email addresses. (Comma delimited)
     COOKIE_DOMAIN: chimera.samswork.co.uk # Domain(s) to set auth cookie on. (Comma delimited)
     INSECURE_COOKIE: 'true' # Use insecure cookies
     COOKIE_NAME: _chimera_forward_auth # Cookie name
