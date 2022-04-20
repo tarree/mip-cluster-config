@@ -1,4 +1,8 @@
 traefik-forward-auth:
+  image:
+    repository: thomseddon/traefik-forward-auth
+    tag: "latest"
+    pullPolicy: IfNotPresent
   env:
     AUTH_HOST: auth.chimera.samswork.co.uk
     COOKIE_DOMAIN: chimera.samswork.co.uk # Domain(s) to set auth cookie on. (Comma delimited)
