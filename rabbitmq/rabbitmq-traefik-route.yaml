@@ -28,4 +28,5 @@ spec:
       port: management
     middlewares:
       - name: traefik-forward-auth
+        namespace: traefik-forward-auth
       - name: rabbitmq-stripprefix
